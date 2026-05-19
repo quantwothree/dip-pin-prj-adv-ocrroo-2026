@@ -15,22 +15,20 @@ Make sure you read the docstrings C.A.R.E.F.U.L.Y (yes, I took the L to check th
 from pathlib import Path
 import cv2
 import numpy as np
-
-
-VID_PATH = Path("resources/name-of-vid-given-to-you-by-instructor.mp4")
+from PIL import Image
 
 class CodingVideo:
     capture: cv2.VideoCapture
 
 
     def __init__(self, video: Path | str):
-        self.capture = ... # You complete me!
+        self.capture = cv2.VideoCapture(video)
         if not self.capture.isOpened():
             raise ValueError(f"Cannot open {video}")
 
-        self.fps = ...
-        self.frame_count = ...
-        self.duration = ...
+        self.fps = self.capture.get(cv2.CAP_PROP_FPS)
+        self.frame_count = self.capture.get(cv2.CAP_PROP_FRAME_COUNT)
+        self.duration = self.frame_count / self.fps
 
 
     def __str__(self) -> str:
@@ -46,9 +44,11 @@ class CodingVideo:
         https://docs.opencv.org/3.4/d4/d15/group__videoio__flags__base.html#gaeb8dd9c89c10a5c63c139bf7c4f5704d
         """
 
+        return f'Video metadata: Frame count: {int(self.frame_count)},  Frame rate: {round(self.fps,2)} fps, Length: {round(self.duration/60,2)} minutes'
+
     def get_frame_number_at_time(self, seconds: int) -> int:
         """Given a time in seconds, returns the value of the nearest frame"""
-
+        return int(self.fps * seconds)
 
     def get_frame_rgb_array(self, frame_number: int) -> np.ndarray:
         """Returns a numpy N-dimensional array (ndarray)
@@ -62,6 +62,25 @@ class CodingVideo:
         # TODO: Find a tutorial on OpenCV that demonstrates color space conversion
 
         """
+
+        # Set the next frame to be decoded to frame_number
+        # How to use SET() and CAP_PROP_POS_FRAMES:
+        # https://docs.opencv.org/4.x/d8/dfe/classcv_1_1VideoCapture.html
+        # https://docs.opencv.org/4.x/d4/d15/group__videoio__flags__base.html
+
+        self.capture.set(cv2.CAP_PROP_POS_FRAMES, frame_number)
+
+        # Read() the given frame
+        # How to use READ(): https://docs.opencv.org/4.x/d8/dfe/classcv_1_1VideoCapture.html
+        success, frame = self.capture.read()
+        if not success:
+            raise ValueError(f"Could not read frame")
+
+        # Convert from BGR to RGB
+        # Tutorial: https://docs.opencv.org/4.x/df/d9d/tutorial_py_colorspaces.html
+        rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+
+        return rgb_frame
 
     def get_image_as_bytes(self, seconds: int) -> bytes:
         self.capture.set(cv2.CAP_PROP_POS_FRAMES, self.get_frame_number_at_time(seconds))
@@ -77,16 +96,32 @@ class CodingVideo:
 
 
     def save_as_image(self, seconds: int, output_path: Path | str = 'output.png') -> None:
-      """Saves the given frame as a png image
+        """Saves the given frame as a png image
 
-      # TODO: Requires a third-party library to convert ndarray to png
-      # TODO: Identify the library and add a reference to its documentation
+        # TODO: Requires a third-party library to convert ndarray to png
+        # TODO: Identify the library and add a reference to its documentation
 
 
-      """
+        """
+
+        # Convert the timestamp to a frame number
+        frame = self.get_frame_number_at_time(seconds)
+
+        # Get RGB array using the method built earlier
+        rgb_array = self.get_frame_rgb_array(frame)
+
+        # Use Pillow to convert the array to an Image object
+        # How to: https://pillow.readthedocs.io/en/stable/reference/Image.html
+        image = Image.fromarray(rgb_array)
+
+        # Save the image to the specified path
+        image.save(output_path)
+
+
+
 def test():
     """Try out your class here"""
-    oop = CodingVideo("resources/oop.mp4")
+    oop = CodingVideo("../resources/oop.mp4")
     print(oop)
     oop.save_as_image(42)
 
