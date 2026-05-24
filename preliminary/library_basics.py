@@ -1,25 +1,13 @@
-"""A basic introduction to Open CV
-
-Instructions
-------------
-
-Implement the functions below based on their docstrings.
-
-Notice some docstrings include references to third-party documentation
-Some docstrings **require** you to add references to third-party documentation.
-
-Make sure you read the docstrings C.A.R.E.F.U.L.Y (yes, I took the L to check that you are awake!)
-"""
-
-# imports - add all required imports here
 from pathlib import Path
 import cv2
 import numpy as np
 from PIL import Image
+import pytesseract
+
+pytesseract.pytesseract.tesseract_cmd = r'C:\Users\dinhq\AppData\Local\Programs\Tesseract-OCR\tesseract.exe'
 
 class CodingVideo:
     capture: cv2.VideoCapture
-
 
     def __init__(self, video: Path | str):
         self.capture = cv2.VideoCapture(video)
@@ -56,11 +44,6 @@ class CodingVideo:
         The array represents the RGB values of each pixel in a given frame
 
         Note: cv2 defaults to BGR format, so this function converts the color space to RGB
-
-        Reference
-        ---------
-        # TODO: Find a tutorial on OpenCV that demonstrates color space conversion
-
         """
 
         # Set the next frame to be decoded to frame_number
@@ -117,13 +100,30 @@ class CodingVideo:
         # Save the image to the specified path
         image.save(output_path)
 
+    def get_text_at_time(self, seconds: int) -> str:
+        """Extracts text from the video at the given timestamp using Tesseract OCR.
 
+        Reference
+        ---------
+        https://github.com/madmaze/pytesseract
+        """
+        # 1. Convert seconds to frame number
+        frame = self.get_frame_number_at_time(seconds)
+
+        # 2. Get the RGB array for that frame
+        rgb_array = self.get_frame_rgb_array(frame)
+
+        # 3. Extract the text using pytesseract
+        text = pytesseract.image_to_string(rgb_array)
+
+        return text
 
 def test():
-    """Try out your class here"""
     oop = CodingVideo("../resources/oop.mp4")
     print(oop)
     oop.save_as_image(42)
+    extracted_text = oop.get_text_at_time(42)
+    print(extracted_text)
 
 if __name__ == '__main__':
     test()
