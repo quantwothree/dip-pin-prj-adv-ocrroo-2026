@@ -101,11 +101,27 @@ FastAPI will allow us to enable communication with our OCR service from other pr
 4. Run the following curl command (may require git bash on Windows):
 `curl 127.0.0.1:8000/video`
 5. Confirm that a list of videos and URLs is returned by copying the output below:
-> Description
+> {"count":1,"videos":[{"id":"demo","path":"..\\resources\\oop.mp4","_links":{"self":"/video/demo","frame_example":"/video/demo/frame/1.0"}}]}
+
 6. What are the names of the two processes that just communicated?
->
+> It's client and server communication where the curl command is the client. It initiates the commucation by sending an HTTP Request to the local host at 127.0.0.1:8000/video
+While FastAPI and Uvicorn act as the server who wait and listen at port 8000, they would recieve the request and send back the reponse
 6. Modify the simple_api.py so that it works correctly with your implementation and complete any TODO markers
 7. Demonstrate the use of at least two other end points below:
->
->
->
+> /video/{vid}/frame/{t}
+> This endpoint returns the frame at the given time {t} as an image.
+> When the server receives a GET request at 127.0.0.1:8000/video/demo/frame/42, FastAPI calls video_frame() 
+> video_frame() calls  _open_vid_or_404() returns a CodingVideo instance. Then get_image_as_bytes() is called on that CodingVideo and 
+> it returns raw bytes. This data is then interpreted by the Reponse class with the content as the bytes itself and the specified media type as image/png 
+> Which means that the raw bytes would be translated into an image on the web browser. 
+> Within the local machine it's okay to use Pillow to save the image from a frame but since we are sending it over the web server, they need to be able to 
+> understand the data, hence the use of raw bytes. 
+> 
+> "/video/{vid}"
+> This endpoint returns a the metadata for a specific video. 
+> When the server receives a GET request at 127.0.0.1:8000/video/demo, FastAPI calls video() which calls _open_vid_or_404(vid). This function 
+> opens and returns a CodingVideo instance of the video. Then the _meta() is called, it extracts the properties of the video like FPS, frame count, 
+> and duration. The code then also attaches HATEOAS _links (self and frames) to the VideoMetaData instance. 
+> This is to provide the client side the exact URLs should they want to navigate further to other APIs. 
+> 
+
