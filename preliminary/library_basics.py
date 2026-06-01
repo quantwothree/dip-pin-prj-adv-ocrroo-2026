@@ -81,10 +81,6 @@ class CodingVideo:
     def save_as_image(self, seconds: int, output_path: Path | str = 'output.png') -> None:
         """Saves the given frame as a png image
 
-        # TODO: Requires a third-party library to convert ndarray to png
-        # TODO: Identify the library and add a reference to its documentation
-
-
         """
 
         # Convert the timestamp to a frame number

@@ -25,7 +25,7 @@ This could, theoretically transform an otherwise inaccessible video into a fully
 
 # Dependencies:
 
-## TESSERACT
+## TESSERACT 
 
 This project relies on Tesseract engine to process OCR function, because it's written in C++, we will need to use a Python Wrapper 
 called Pytesseract.
@@ -52,3 +52,29 @@ Here is how to install Pytesseract:
       -       import pytesseract 
 
 
+## OPEN-CV
+
+OpenCV is an open-source library designed for image or video processing and computer vision. 
+It supports a wide range of tasks, including image capture, image manipulation, feature detection, object recognition, camera calibration, video tracking, etc. 
+Open CV plays an important role in this project because it has the image-processing functions required for video playback, as video playback is essentially a form of image processing
+
+Getting started: https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html
+
+API: https://docs.opencv.org/4.x/index.html
+
+
+## FAST API 
+
+FastAPI is a modern, open-source web framework designed for building high-performance APIs with Python. It supports a wide range of tasks, including routing HTTP requests, automatic data validation, data serialization, and automatically generating interactive API documentation. 
+FastAPI plays an important role in this project because it serves as the backend infrastructure, providing the network endpoints required to securely communicate between the user interface and our Python logic (like video frame extraction and OCR text processing).
+
+Getting started: https://fastapi.tiangolo.com/tutorial/
+
+## PILLOW 
+
+Pillow is an open-source library designed for image processing and manipulation in Python, serving as the modern fork of the Python Imaging Library (PIL). 
+It supports a wide range of tasks, including opening various image file formats, cropping, resizing, rotating, color conversions, and applying basic visual filters. 
+Pillow plays an important role in this project because it acts as the essential bridge between our video processing and the OCR engine. 
+It provides the image-handling functions required to accurately format and preprocess the raw video frames extracted by OpenCV so that Tesseract can successfully read the text.
+
+Getting started: https://pillow.readthedocs.io/en/stable/index.html
