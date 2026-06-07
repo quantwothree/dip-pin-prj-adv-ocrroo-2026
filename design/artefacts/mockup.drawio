@@ -1,0 +1,52 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="910wraxklof2rXFoX-Wu">
+    <mxGraphModel dx="785" dy="515" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="U7mvGHMcEiWm9gzOg_8I-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="370" width="760" x="50" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="U7mvGHMcEiWm9gzOg_8I-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="210" width="760" x="50" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="U7mvGHMcEiWm9gzOg_8I-17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="290" width="700" x="80" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="U7mvGHMcEiWm9gzOg_8I-29" parent="1" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://icons.diagrams.net/icon-cache1/Boxicons_Solid_Vol_2-2639/bxs-fast-forward-circle-922.svg" value="" vertex="1">
+          <mxGeometry height="31" width="31" x="224.25" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="U7mvGHMcEiWm9gzOg_8I-31" parent="1" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=#000000;fillColor=#000000;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.video_play;" value="" vertex="1">
+          <mxGeometry height="19.5" width="40" x="100" y="535" as="geometry" />
+        </mxCell>
+        <mxCell id="U7mvGHMcEiWm9gzOg_8I-33" parent="1" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#000000;shadow=0;dashed=0;shape=mxgraph.ios7.icons.pause;pointerEvents=1" value="" vertex="1">
+          <mxGeometry height="16.75" width="20" x="160" y="537.12" as="geometry" />
+        </mxCell>
+        <mxCell id="U7mvGHMcEiWm9gzOg_8I-35" parent="1" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://icons.diagrams.net/icon-cache1/Boxicons_Solid_Vol_2-2639/bxs-fast-forward-circle-922.svg;direction=west;" value="" vertex="1">
+          <mxGeometry height="31" width="31" x="193.25" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="U7mvGHMcEiWm9gzOg_8I-36" parent="1" style="rounded=1;fillColor=#007FFF;strokeColor=none;html=1;whiteSpace=wrap;fontColor=#ffffff;align=center;verticalAlign=middle;fontStyle=0;fontSize=12;sketch=0;" value="Get Text" vertex="1">
+          <mxGeometry height="33" width="100" x="270" y="530.5" as="geometry" />
+        </mxCell>
+        <mxCell id="U7mvGHMcEiWm9gzOg_8I-38" parent="1" style="rounded=1;arcSize=9;fillColor=#F7F8F9;align=left;spacingLeft=5;strokeColor=#DEE1E6;html=1;strokeWidth=2;fontColor=#596780;fontSize=12" value="EDITABLE OCR TEXT APPEARS HERE" vertex="1">
+          <mxGeometry height="170" width="720" x="70" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="U7mvGHMcEiWm9gzOg_8I-40" parent="1" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://icons.diagrams.net/icon-cache1/User_Interface-2098/UI_copy_paste_note_paper_file-1453.svg" value="" vertex="1">
+          <mxGeometry height="32" width="32" x="748" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="U7mvGHMcEiWm9gzOg_8I-41" parent="1" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#1A1A1A;shadow=0;dashed=0;shape=mxgraph.ios7.icons.reload;fillColor=#000000;" value="" vertex="1">
+          <mxGeometry height="27" width="24" x="730" y="533" as="geometry" />
+        </mxCell>
+        <mxCell id="U7mvGHMcEiWm9gzOg_8I-42" parent="1" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#000000;shadow=0;dashed=0;shape=mxgraph.ios7.icons.repeat;pointerEvents=1" value="" vertex="1">
+          <mxGeometry height="24" width="30" x="680" y="535" as="geometry" />
+        </mxCell>
+        <mxCell id="U7mvGHMcEiWm9gzOg_8I-48" parent="1" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.video_conversation;" value="" vertex="1">
+          <mxGeometry height="65" width="130" x="360" y="342.5" as="geometry" />
+        </mxCell>
+        <mxCell id="U7mvGHMcEiWm9gzOg_8I-49" parent="1" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://icons.diagrams.net/icon-cache1/Ionicons-2627/icon-close-circled-1148.svg" value="" vertex="1">
+          <mxGeometry height="32" width="32" x="100" y="250" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

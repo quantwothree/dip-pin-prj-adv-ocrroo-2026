@@ -53,6 +53,10 @@ What does this person need from the application? What are their pain points?
 > Link to an issue that covers a pain point relevant to the persona and explain why it is relevant.
 >
 
+**Relevant Issue:** https://github.com/quantwothree/dip-pin-prj-adv-ocrroo-2026/issues/1
+
+**Explanation:** This issue directly addresses Jimmy's primary pain point: the disruption of manual transcription. By designing a button integrated into the video player, we remove the friction of pausing the video and typing out code. It fulfills Jimmy's need for a low-friction interaction and it supports his goal of an efficient, uninterrupted study flow.
+
 ### Validation
 
 You will validate your design by meeting with a user representative: the product owner (in this case, your lecturer).
