@@ -51,7 +51,7 @@ What are the UI interaction patterns you will use in your project?
 
 **High Contrast:** For users who have impaired vision but do not rely entirely on screen readers, the currently selected button or text field will feature a high-contrast design so the active state is clearly distinguishable. 
 
-**Semantic HTML:** Using native <button>, <h1>, and <main> tags rather than custom <div> components to ensure maximum compatibility with assistive technologies.
+**Semantic HTML:** Using native button, h1, and main tags rather than custom div components to ensure maximum compatibility with assistive technologies.
 
 ## AI Prompts
 

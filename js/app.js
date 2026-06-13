@@ -12,6 +12,8 @@ const output = document.getElementById('text-output');
 const timeStampKey = `${videoId}-timestamp`; // ${ } uses with back ticks ` ` is JS way to get the value of the videoId variable and put it in this string
 const timeStamp = sessionStorage.getItem(timeStampKey);
 
+const themeToggleBtn = document.getElementById('theme-toggle');
+
 // Run this when the GENERATE TEXTS button is clicked
 // async allows a function to be asynchronous
 // await pauses the async function until a Promise is done, ONLY pauses the async function, everything else still runs
@@ -50,4 +52,19 @@ if (videoPlayer) {
   videoPlayer.addEventListener('timeupdate', () => {
     sessionStorage.setItem(timeStampKey, videoPlayer.currentTime);
   })
+}
+
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', function() {
+        // Check if 'dark' is active
+        if (document.documentElement.classList.contains('dark')) {
+            // Turn it off and save
+            document.documentElement.classList.remove('dark');
+            sessionStorage.setItem('theme', 'light');
+        } else {
+            // Turn it on and save
+            document.documentElement.classList.add('dark');
+            sessionStorage.setItem('theme', 'dark');
+        }
+    });
 }
