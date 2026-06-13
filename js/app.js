@@ -1,7 +1,7 @@
 const generateBtn = document.getElementById('btn-texts');
 const videoPlayer = document.getElementById('video-player');
 
-const videoId = videoPlayer.getAttribute('data-id');
+let videoId = null;
 const output = document.getElementById('text-output');
 
 //Key-value pair to store timestamps in sessionStorage
@@ -45,7 +45,10 @@ generateBtn.addEventListener('click', async () => {
 // If a timeStamp exists, set the video player to that time
 // Constantly update current time of video with 'timeupdate' and store it in sessionStorage
 
+// Make sure that a videoplayer exists on the page before accessing videoId
 if (videoPlayer) {
+  videoId = videoPlayer.getAttribute('data-id');
+
   if (timeStamp) {
       videoPlayer.currentTime = parseFloat(timeStamp);
   }
