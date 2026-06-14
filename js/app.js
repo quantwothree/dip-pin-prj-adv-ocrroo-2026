@@ -1,14 +1,11 @@
 const generateBtn = document.getElementById('btn-texts');
 const videoPlayer = document.getElementById('video-player');
-
 let videoId = null;
 const output = document.getElementById('text-output');
 
 //Key-value pair to store timestamps in sessionStorage
 //timeStampKey is the key
 //timeStamp is the value
-
-
 const timeStampKey = `${videoId}-timestamp`; // ${ } uses with back ticks ` ` is JS way to get the value of the videoId variable and put it in this string
 const timeStamp = sessionStorage.getItem(timeStampKey);
 
@@ -19,16 +16,13 @@ const themeToggleBtn = document.getElementById('theme-toggle');
 // await pauses the async function until a Promise is done, ONLY pauses the async function, everything else still runs
 
 generateBtn.addEventListener('click', async () => {
-  if (videoPlayer) {
-
-    // Pause the video and get the current timestamp when GENERATE TEXTS button clicked
+  if (!videoPlayer || !videoId || videoId === "") {
+        output.innerText = 'Choose a video first!';
+        return;
+  }
+  // Pause the video and get the current timestamp when GENERATE TEXTS button clicked
     videoPlayer.pause();
     const currentTime = videoPlayer.currentTime;
-
-    if (!videoId || videoId === ""){
-      output.innerText = 'Invalid video ID';
-      return;
-    }
 
     // pauses here until the fetch() is done, meanwhile everything outside this eventListener runs
     // fetch() is bascially sending a GET to that endpoint
@@ -39,7 +33,6 @@ generateBtn.addEventListener('click', async () => {
       const data = await response.json();
       output.innerText = data.text;
     }
-  }
 });
 
 // If a timeStamp exists, set the video player to that time

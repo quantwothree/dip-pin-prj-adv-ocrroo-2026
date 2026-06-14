@@ -62,3 +62,7 @@ Write down any AI prompts you came up with after your first session
 - To implement ARIA into my video player, all I need to do is to add the appropriate HTML tags?
 - Would any web apps running on a browser automatically work with keyboard shortcuts?
 - Help me understand how screen readers work in general and in a web app
+- What are some approaches that I could implement if I want a dark mode toggle button for a web app?
+- Help me build a video player front-end in HTML and Tailwind where we have a main section for the video to stream, below that we have 3 buttons, and right underneath is a textbox 
+- Change my layout so that it defaults to light mode and add dark theme with dark:
+- 
