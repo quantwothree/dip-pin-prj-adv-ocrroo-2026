@@ -22,6 +22,7 @@ This could, theoretically transform an otherwise inaccessible video into a fully
 3. Make sure that you have a folder called 'resources' at the root of this project and inside it you have a video called 'oop.mp4'
 4. Run `uv sync` from the root folder of the project 
 5. Now you can run the project using `uv run fastapi dev preliminary/simple_api.py`
+6. Go to this address in your browser: 127.0.0.1:8000 and test out the app
 
 # Dependencies:
 
